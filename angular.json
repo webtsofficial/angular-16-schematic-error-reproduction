@@ -8,13 +8,37 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "standalone": true
+          "changeDetection": "OnPush",
+          "viewEncapsulation": "None",
+          "skipTests": false,
+          "standalone": true,
+          "prefix": "wl"
         },
         "@schematics/angular:directive": {
+          "prefix": "wl",
+          "standalone": true
+        },
+        "@schematics/angular:guard": {
+          "functional": true,
+          "implements": [
+            "CanActivate"
+          ]
+        },
+        "@schematics/angular:interceptor": {
+          "functional": true
+        },
+        "@schematics/angular:library": {
+          "prefix": "wl",
           "standalone": true
         },
         "@schematics/angular:pipe": {
           "standalone": true
+        },
+        "@schematics/angular:resolver": {
+          "functional": true
+        },
+        "@schematics/angular:web-worker": {
+          "snippet": true
         }
       },
       "root": "",
